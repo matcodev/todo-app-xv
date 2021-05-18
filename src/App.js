@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import InputToDo from "./components/Input";
+import ToDoTable from './components/ToDoTable';
 
 function App() {
+
+  const toDoData = [
+    {id: 1, task: 'Codear'},
+    {id: 2, task: 'Cocinar'},
+    {id: 3, task: 'Barrer'}
+  ]
+  const [toDo, setToDo] = useState(toDoData);
+
+  const addToDo = (newToDo) => {
+    newToDo.id = toDo.length + 1
+    console.log(newToDo)
+    setToDo([
+      ...toDo,
+      newToDo
+    ])
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <InputToDo 
+        addToDo={addToDo}
+      />
+      <hr className="text-danger my-4"/>
+      <ToDoTable 
+        toDo={toDo}
+      />
     </div>
   );
 }
