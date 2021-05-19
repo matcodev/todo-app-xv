@@ -20,19 +20,18 @@ const ToDoTable = (props) => {
                                 <th scope="row">{todo.id}</th>
                                 <td>{todo.task}</td>
                                 <td>
-                                    <button type="button" className="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Delate task">
+                                    <button onClick={() => props.deleteToDo(todo.id)} type="button" className="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Delate task">
                                         <i className="fas fa-trash" />
                                     </button>
                                 </td>
                             </tr>
                         )) : (
-                            <tr>
-                                <th>No tasks for now</th>
-                            </tr>
+                            <div className="container text-center text-danger">
+                                <h1 className="">No tasks for now</h1>
+                            </div>
                         )
-                }           
+                }
             </tbody>
-
         </table>
     );
 }

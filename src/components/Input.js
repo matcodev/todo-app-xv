@@ -8,12 +8,10 @@ const InputToDo = (props) => {
     const handlePressKey = (e) => {
         const { name, value } = e.target
         setTask({...task, [name]:value})
-        console.log(e.target.value)
     }
     const sendTask = (e)=> {
         e.preventDefault()
         if(task.task !== ""){
-            console.log('Enviando...')
             props.addToDo(task)
             setTask(initialToDo)
         }

@@ -13,11 +13,14 @@ function App() {
 
   const addToDo = (newToDo) => {
     newToDo.id = toDo.length + 1
-    console.log(newToDo)
     setToDo([
       ...toDo,
       newToDo
     ])
+  }
+  
+  const deleteToDo = (id) => {
+    setToDo(toDo.filter((toDo) => toDo.id !== id))
   }
 
   return (
@@ -28,6 +31,7 @@ function App() {
       <hr className="text-danger my-4"/>
       <ToDoTable 
         toDo={toDo}
+        deleteToDo={deleteToDo}
       />
     </div>
   );
