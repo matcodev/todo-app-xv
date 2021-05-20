@@ -12,7 +12,7 @@ function App() {
   const [toDo, setToDo] = useState(toDoData);
 
   const addToDo = (newToDo) => {
-    newToDo.id = toDo.length + 1
+    newToDo.id = toDo.length > 0 ? (toDo[toDo.length - 1].id) + 1 : 1;
     setToDo([
       ...toDo,
       newToDo

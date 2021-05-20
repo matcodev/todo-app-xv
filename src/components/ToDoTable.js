@@ -26,9 +26,11 @@ const ToDoTable = (props) => {
                                 </td>
                             </tr>
                         )) : (
-                            <div className="container text-center text-danger">
-                                <h1 className="">No tasks for now</h1>
-                            </div>
+                            <tr className="container text-center text-danger">
+                                <td>
+                                    <h1>No tasks for now</h1>
+                                </td>
+                            </tr>
                         )
                 }
             </tbody>
