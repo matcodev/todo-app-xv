@@ -11,7 +11,9 @@ const InputToDo = (props) => {
     }
     const sendTask = (e)=> {
         e.preventDefault()
-        if(task.task !== ""){
+        const noValid = e.target.name.length <= 0 ? true : false;
+        console.log(noValid)
+        if(task.task === true){
             props.addToDo(task)
             setTask(initialToDo)
         }
