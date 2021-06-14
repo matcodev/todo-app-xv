@@ -7,7 +7,9 @@ const InputToDo = (props) => {
 
     const handlePressKey = (e) => {
         const { name, value } = e.target
-        setTask({ ...task, [name]: value })
+        setTask({ 
+            ...task,
+            [name]: value })
     }
     const onKeyUpValue = (e) => {
         if (e.key === 'Enter') {

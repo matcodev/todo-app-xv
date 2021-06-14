@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import InputToDo from "./components/Input";
+import InputToDo from "./components/InputToDo";
 import ToDoTable from './components/ToDoTable';
 
 function App() {
@@ -10,12 +10,14 @@ function App() {
     {id: 3, task: 'Barrer'}
   ]
   const [toDo, setToDo] = useState(toDoData);
-
+  
   const addToDo = (newToDo) => {
-    newToDo.id = toDo.length > 0 ? (toDo[toDo.length - 1].id) + 1 : 1;
+    const id = toDo.length > 0 ? (toDo[toDo.length - 1].id) + 1 : 1;
+    const taskFinal = {...newToDo, id : id}
+    console.log(taskFinal)
     setToDo([
       ...toDo,
-      newToDo
+      taskFinal
     ])
   }
   

@@ -2,6 +2,9 @@ import React from 'react'
 import '@fortawesome/fontawesome-free';
 
 const ToDoTable = (props) => {
+
+    
+
     return (
         <table className="table">
             <thead className="text-center">
